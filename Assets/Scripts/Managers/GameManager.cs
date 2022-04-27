@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : CustomBehaviour
+namespace Scripts.Manager
 {
-    public UIManager UIManager => _uiManager;
-    
-    [SerializeField]private UIManager _uiManager;
-
-    private void Awake()
+    public class GameManager : CustomBehaviour
     {
-        Application.targetFrameRate = 60;
+        public UIManager UIManager => _uiManager;
+        public EventManager EventManager => _eventManager;
+        public LevelManager LevelManager => _levelManager;
 
-        _uiManager.Initialize(this);
+        [SerializeField] private UIManager _uiManager;
+        [SerializeField] private EventManager _eventManager;
+        [SerializeField] private LevelManager _levelManager;
+
+        private void Awake()
+        {
+            Application.targetFrameRate = 60;
+
+            _uiManager.Initialize(this);
+            _eventManager.Initialize(this);
+            _levelManager.Initialize(this);
+        }
     }
 }
 

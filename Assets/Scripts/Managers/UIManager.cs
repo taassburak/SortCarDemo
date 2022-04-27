@@ -5,48 +5,52 @@ using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.UI;
 
-public class UIManager : CustomBehaviour
+namespace Scripts.Manager
 {
-    public MainMenuPanel MainMenuPanel => _mainMenuPanel;
-    [SerializeField] private MainMenuPanel _mainMenuPanel;
-
-    private List<UIPanel> UIPanels;
-
-    public override void Initialize(GameManager gameManager)
+    public class UIManager : CustomBehaviour
     {
-        base.Initialize(gameManager);
-        UIPanels = new List<UIPanel> {_mainMenuPanel};
+        public MainMenuPanel MainMenuPanel => _mainMenuPanel;
+        [SerializeField] private MainMenuPanel _mainMenuPanel;
 
-        UIPanels.ForEach(x =>
+        private List<UIPanel> UIPanels;
+
+        public override void Initialize(GameManager gameManager)
         {
-            x.Initialize(this);
-            x.gameObject.SetActive(false);
-        });
-        //hudPanel.ShowPanel();
+            base.Initialize(gameManager);
+            UIPanels = new List<UIPanel> { _mainMenuPanel };
 
+            UIPanels.ForEach(x =>
+            {
+                x.Initialize(this);
+                x.gameObject.SetActive(false);
+            });
+            //hudPanel.ShowPanel();
+
+        }
+
+        //public void ClosePanelsOnGoHome()
+        //{
+        //    UIPanels = new List<UIPanel> { mainMenuPanel, hudPanel, finishPanel, settingsPanel, /*karmaSelectionPanel,*/ decisionPanel, PunishmentPanelNonCoin, transitionPanel, hintPanel, shopPanel, promptPanel };
+
+        //    UIPanels.ForEach(x =>
+        //    {
+        //        x.gameObject.SetActive(false);
+        //    });
+        //    //hudPanel.ShowPanel();
+        //    mainMenuPanel.ShowPanel();
+        //}
+
+        //public void CloseUnUsedPanels(UIPanel currentPanel)
+        //{
+        //    UIPanels = new List<UIPanel> { mainMenuPanel, hudPanel, finishPanel, settingsPanel, /*karmaSelectionPanel,*/ decisionPanel, PunishmentPanelNonCoin, transitionPanel, hintPanel, shopPanel, promptPanel };
+
+        //    UIPanels.ForEach(x =>
+        //    {
+        //        x.gameObject.SetActive(false);
+        //    });
+
+        //    currentPanel.ShowPanel();
+        //}
     }
 
-    //public void ClosePanelsOnGoHome()
-    //{
-    //    UIPanels = new List<UIPanel> { mainMenuPanel, hudPanel, finishPanel, settingsPanel, /*karmaSelectionPanel,*/ decisionPanel, PunishmentPanelNonCoin, transitionPanel, hintPanel, shopPanel, promptPanel };
-
-    //    UIPanels.ForEach(x =>
-    //    {
-    //        x.gameObject.SetActive(false);
-    //    });
-    //    //hudPanel.ShowPanel();
-    //    mainMenuPanel.ShowPanel();
-    //}
-
-    //public void CloseUnUsedPanels(UIPanel currentPanel)
-    //{
-    //    UIPanels = new List<UIPanel> { mainMenuPanel, hudPanel, finishPanel, settingsPanel, /*karmaSelectionPanel,*/ decisionPanel, PunishmentPanelNonCoin, transitionPanel, hintPanel, shopPanel, promptPanel };
-
-    //    UIPanels.ForEach(x =>
-    //    {
-    //        x.gameObject.SetActive(false);
-    //    });
-
-    //    currentPanel.ShowPanel();
-    //}
 }

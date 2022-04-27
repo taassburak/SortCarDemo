@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using Scripts.Manager;
 public class UIPanel : CustomBehaviour
 {
     public UIManager UIManager { get; set; }

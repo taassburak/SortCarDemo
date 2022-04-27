@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-
+using Scripts.Manager;
 
 public class CustomBehaviour : MonoBehaviour
 {
