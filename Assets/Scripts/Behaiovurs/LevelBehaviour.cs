@@ -23,6 +23,10 @@ namespace Scripts.Behaviours
         [SerializeField] private Color _leftSideColor;
         [SerializeField] private Color _rightSideColor;
 
+        [Header("ENVIRONMENT")]
+        [SerializeField] private BarrierBehaviour _leftBarrier;
+        [SerializeField] private BarrierBehaviour _rightBarrier;
+        
         private List<GridBehaviour> _grids;
         private List<CarBehaviour> _carsOnField;
 
@@ -32,10 +36,16 @@ namespace Scripts.Behaviours
         private int _currentRightCar = 0;
         private List<CarBehaviour> _cars;
 
+
+
         public override void Initialize(GameManager gameManager)
         {
             base.Initialize(gameManager);
             _carsOnField = new List<CarBehaviour>();
+
+            _leftBarrier.Initialize(gameManager);
+            _rightBarrier.Initialize(gameManager);
+
 
             SetGridList(_leftSideGrid, _rightSideGrid);
             SetCarList(_leftCars, _rightCars);
@@ -128,5 +138,7 @@ namespace Scripts.Behaviours
                 GameManager.EventManager.RightSideCarStartToMove();
             }
         }
+
+
     }
 }

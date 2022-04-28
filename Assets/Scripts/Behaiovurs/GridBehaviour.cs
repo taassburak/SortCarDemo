@@ -7,7 +7,7 @@ public class GridBehaviour : CustomBehaviour
     public LevelEnum.Side CorrectSide => _correctSide;
     public Vector3[] PathForLeft => _pathForLeft;
     public Vector3[] PathForRight => _pathForRight;
-    [HideInInspector]public bool IsFull;
+    public bool IsFull;
 
     [SerializeField] Vector3[] _pathForLeft;
     [SerializeField] Vector3[] _pathForRight;
@@ -19,6 +19,7 @@ public class GridBehaviour : CustomBehaviour
 
     public void Initialize(Color colorLeft, Color colorRight)
     {
+        IsFull = false;
         _spriteRenderer = GetComponent<SpriteRenderer>();
         if (_correctSide == LevelEnum.Side.Left)
         {

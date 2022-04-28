@@ -8,7 +8,8 @@ namespace Scripts.Manager
         public event Action<bool> OnLevelFinished;
         public event Action<bool> OnCarStartToMove;
         public event Action<bool> OnCarReachedAGrid;
-
+        public event Action<bool> OnBarrierMove;
+        public event Action OnLevelStarted;
         public override void Initialize(GameManager gameManager)
         {
             base.Initialize(gameManager);
@@ -41,9 +42,23 @@ namespace Scripts.Manager
 
         public void CarReachedWrongGrid()
         {
-            OnCarReachedAGrid?.Invoke(true);
+            OnCarReachedAGrid?.Invoke(false);
+        }
+        
+        public void RightBarrierMove()
+        {
+            OnBarrierMove?.Invoke(true);
         }
 
+        public void LeftBarrierMove()
+        {
+            OnBarrierMove?.Invoke(false);
+        }
+
+        public void LevelStarted()
+        {
+            OnLevelStarted?.Invoke();
+        }
 
 
     }
