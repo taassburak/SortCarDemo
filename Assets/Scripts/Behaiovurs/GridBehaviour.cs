@@ -4,6 +4,7 @@ using UnityEngine;
 using Scripts.Enums;
 public class GridBehaviour : CustomBehaviour
 {
+    public LevelEnum.Side CorrectSide => _correctSide;
     public Vector3[] PathForLeft => _pathForLeft;
     public Vector3[] PathForRight => _pathForRight;
     [HideInInspector]public bool IsFull;

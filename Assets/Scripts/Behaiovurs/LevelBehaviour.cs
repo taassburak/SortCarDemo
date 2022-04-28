@@ -9,6 +9,7 @@ namespace Scripts.Behaviours
     public class LevelBehaviour : CustomBehaviour
     {
         public List<CarBehaviour> CarsOnField => _carsOnField;
+        public int GridCounts => _grids.Count;
 
         [Header("CARS")]
         [SerializeField] private List<CarBehaviour> _leftCars;
@@ -41,7 +42,7 @@ namespace Scripts.Behaviours
 
             foreach(var car in _cars)
             {
-                car.Initialize(_leftSideColor, _rightSideColor);
+                car.Initialize(_leftSideColor, _rightSideColor, gameManager);
             }
             foreach (var grid in _grids)
             {
@@ -105,13 +106,13 @@ namespace Scripts.Behaviours
             FindFirstAvaiableGrid();
             if (isRightCar)
             {
-                _rightCars[_currentRightCar].CarMovement(_rightSideGrid[_currentRightGrid].PathForRight, 1.5f);
+                _rightCars[_currentRightCar].CarMovement(_rightSideGrid[_currentRightGrid], _rightSideGrid[_currentRightGrid].PathForRight, 1.5f);
                 _rightSideGrid[_currentRightGrid].IsFull = true;
                 _currentRightCar++;
             }
             else
             {
-                _leftCars[_currentLeftCar].CarMovement(_leftSideGrid[_currentLeftGrid].PathForLeft, 1.5f);
+                _leftCars[_currentLeftCar].CarMovement(_leftSideGrid[_currentLeftGrid], _leftSideGrid[_currentLeftGrid].PathForLeft, 1.5f);
                 _leftSideGrid[_currentLeftGrid].IsFull = true;
                 _currentLeftCar++;
             }
