@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 607994043946139348}
   - component: {fileID: 4192769437664797923}
   - component: {fileID: 2589636076687728574}
-  - component: {fileID: 2589636076687728562}
   m_Layer: 0
   m_Name: ChamferBox001 (5)
   m_TagString: Untagged
@@ -105,19 +104,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2589636076687728562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545007586197639900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _side: 1
 --- !u!1 &545007586390851109
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +116,6 @@ GameObject:
   - component: {fileID: 607994044156105261}
   - component: {fileID: 4192769437856942106}
   - component: {fileID: 2589636078120353679}
-  - component: {fileID: 2589636078120353667}
   m_Layer: 0
   m_Name: ChamferBox001 (3)
   m_TagString: Untagged
@@ -223,19 +208,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2589636078120353667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545007586390851109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _side: 1
 --- !u!1 &545007586491422550
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +220,6 @@ GameObject:
   - component: {fileID: 607994044256402270}
   - component: {fileID: 4192769437756891497}
   - component: {fileID: 2589636076622296532}
-  - component: {fileID: 2589636076622296360}
   m_Layer: 0
   m_Name: ChamferBox001 (14)
   m_TagString: Untagged
@@ -341,19 +312,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2589636076622296360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545007586491422550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _side: 0
 --- !u!1 &545007586511556035
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,7 +323,6 @@ GameObject:
   - component: {fileID: 4927840298946464413}
   - component: {fileID: 607994044234621387}
   - component: {fileID: 4192769437776083964}
-  - component: {fileID: 2589636077093221503}
   - component: {fileID: 2589636077093221499}
   m_Layer: 0
   m_Name: ChamferBox001
@@ -443,19 +400,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2589636077093221503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545007586511556035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _side: 1
 --- !u!54 &2589636077093221499
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -484,7 +428,6 @@ GameObject:
   - component: {fileID: 607994044329191712}
   - component: {fileID: 4192769437815993111}
   - component: {fileID: 2589636076655703034}
-  - component: {fileID: 2589636076655703038}
   m_Layer: 0
   m_Name: ChamferBox001 (6)
   m_TagString: Untagged
@@ -577,19 +520,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2589636076655703038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545007586547139880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _side: 1
 --- !u!1 &545007586700470353
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,7 +532,6 @@ GameObject:
   - component: {fileID: 607994044448949337}
   - component: {fileID: 4192769438233615982}
   - component: {fileID: 2589636077321989107}
-  - component: {fileID: 2589636077321989111}
   m_Layer: 0
   m_Name: ChamferBox001 (8)
   m_TagString: Untagged
@@ -695,19 +624,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2589636077321989111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545007586700470353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _side: 0
 --- !u!1 &545007586806036020
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,7 +635,6 @@ GameObject:
   - component: {fileID: 4927840299240288618}
   - component: {fileID: 607994044545833532}
   - component: {fileID: 4192769438004314123}
-  - component: {fileID: 2589636076956070399}
   - component: {fileID: 2589636076956070395}
   m_Layer: 0
   m_Name: ChamferBox001 (1)
@@ -797,19 +712,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2589636076956070399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545007586806036020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _side: 0
 --- !u!54 &2589636076956070395
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -838,7 +740,6 @@ GameObject:
   - component: {fileID: 607994044726907818}
   - component: {fileID: 4192769436344224157}
   - component: {fileID: 2589636077789353919}
-  - component: {fileID: 2589636077789353907}
   m_Layer: 0
   m_Name: ChamferBox001 (9)
   m_TagString: Untagged
@@ -931,19 +832,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2589636077789353907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545007586953559970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _side: 0
 --- !u!1 &545007587024392863
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,7 +844,6 @@ GameObject:
   - component: {fileID: 607994044797763223}
   - component: {fileID: 4192769436141266080}
   - component: {fileID: 2589636076454365206}
-  - component: {fileID: 2589636076454365290}
   m_Layer: 0
   m_Name: ChamferBox001 (12)
   m_TagString: Untagged
@@ -1049,19 +936,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2589636076454365290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545007587024392863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _side: 0
 --- !u!1 &545007587226337263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,7 +948,6 @@ GameObject:
   - component: {fileID: 607994044991591399}
   - component: {fileID: 4192769436617230800}
   - component: {fileID: 2589636077131990547}
-  - component: {fileID: 2589636077131990551}
   m_Layer: 0
   m_Name: ChamferBox001 (4)
   m_TagString: Untagged
@@ -1167,19 +1040,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2589636077131990551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545007587226337263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _side: 1
 --- !u!1 &545007587587449461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,7 +1052,6 @@ GameObject:
   - component: {fileID: 607994045369192061}
   - component: {fileID: 4192769436641465418}
   - component: {fileID: 2589636077987465268}
-  - component: {fileID: 2589636077987465224}
   m_Layer: 0
   m_Name: ChamferBox001 (10)
   m_TagString: Untagged
@@ -1285,19 +1144,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2589636077987465224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545007587587449461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _side: 0
 --- !u!1 &545007587630439869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,7 +1156,6 @@ GameObject:
   - component: {fileID: 607994045395415477}
   - component: {fileID: 4192769436751571842}
   - component: {fileID: 2589636076478491499}
-  - component: {fileID: 2589636076478491503}
   m_Layer: 0
   m_Name: ChamferBox001 (2)
   m_TagString: Untagged
@@ -1403,19 +1248,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2589636076478491503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545007587630439869}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _side: 1
 --- !u!1 &545007587644285380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,7 +1260,6 @@ GameObject:
   - component: {fileID: 607994045384117708}
   - component: {fileID: 4192769436761315323}
   - component: {fileID: 2589636076897466491}
-  - component: {fileID: 2589636076897466495}
   m_Layer: 0
   m_Name: ChamferBox001 (7)
   m_TagString: Untagged
@@ -1521,19 +1352,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2589636076897466495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545007587644285380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _side: 1
 --- !u!1 &545007587655977985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,7 +1364,6 @@ GameObject:
   - component: {fileID: 607994045438025737}
   - component: {fileID: 4192769436707158590}
   - component: {fileID: 2589636077099339971}
-  - component: {fileID: 2589636077099339975}
   m_Layer: 0
   m_Name: ChamferBox001 (11)
   m_TagString: Untagged
@@ -1639,19 +1456,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2589636077099339975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545007587655977985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _side: 0
 --- !u!1 &545007587794272591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1664,7 +1468,6 @@ GameObject:
   - component: {fileID: 607994045567642951}
   - component: {fileID: 4192769437116741488}
   - component: {fileID: 2589636076856105658}
-  - component: {fileID: 2589636076856105662}
   m_Layer: 0
   m_Name: ChamferBox001 (13)
   m_TagString: Untagged
@@ -1757,19 +1560,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2589636076856105662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545007587794272591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _side: 0
 --- !u!1 &2263884707579035489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,7 +1775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _side: 1
+  _side: 0
 --- !u!1 &2589636076901604807
 GameObject:
   m_ObjectHideFlags: 0
@@ -2030,7 +1820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _side: 1
+  _side: 0
 --- !u!1 &2589636076979732482
 GameObject:
   m_ObjectHideFlags: 0
@@ -2225,7 +2015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _side: 1
+  _side: 0
 --- !u!1 &2589636077310201063
 GameObject:
   m_ObjectHideFlags: 0
@@ -2325,12 +2115,13 @@ MonoBehaviour:
   _pathForLeft:
   - {x: -30, y: -70.6, z: 330.7}
   - {x: -30, y: -70.6, z: 217.8}
-  - {x: -15.8, y: -70.6, z: 213.4}
+  - {x: 7.9, y: -70.6, z: 204.5}
   _pathForRight:
   - {x: 30, y: -70.6, z: 330.7}
   - {x: 30, y: -70.6, z: 272.2}
-  - {x: -30, y: -70.6, z: 217.8}
-  - {x: -15.8, y: -70.6, z: 213.4}
+  - {x: -30, y: -70.6, z: 251.5}
+  - {x: -30, y: -70.6, z: 216.5}
+  - {x: 7.9, y: -70.6, z: 204.5}
   _correctSide: 1
 --- !u!1 &2589636077332158271
 GameObject:
@@ -2466,7 +2257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _side: 1
+  _side: 0
 --- !u!1 &2589636077421792511
 GameObject:
   m_ObjectHideFlags: 0
@@ -2511,7 +2302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _side: 1
+  _side: 0
 --- !u!1 &2589636077627936791
 GameObject:
   m_ObjectHideFlags: 0
@@ -2661,7 +2452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _side: 1
+  _side: 0
 --- !u!1 &2589636077931129752
 GameObject:
   m_ObjectHideFlags: 0
@@ -2806,12 +2597,13 @@ MonoBehaviour:
   _pathForLeft:
   - {x: -30, y: -70.6, z: 330.7}
   - {x: -30, y: -70.6, z: 217.8}
-  - {x: 7.9, y: -70.6, z: 204.5}
+  - {x: -15.8, y: -70.6, z: 213.4}
   _pathForRight:
   - {x: 30, y: -70.6, z: 330.7}
   - {x: 30, y: -70.6, z: 272.2}
-  - {x: -30, y: -70.6, z: 217.8}
-  - {x: 7.9, y: -70.6, z: 204.5}
+  - {x: -30, y: -70.6, z: 251.5}
+  - {x: -30, y: -70.6, z: 216.5}
+  - {x: -15.8, y: -70.6, z: 213.4}
   _correctSide: 0
 --- !u!1 &2589636078066900896
 GameObject:
@@ -2958,7 +2750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b29f3e9e32a274c9574b289ae653cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _side: 1
+  _side: 0
 --- !u!1 &2589636078203197194
 GameObject:
   m_ObjectHideFlags: 0
@@ -3345,8 +3137,8 @@ MonoBehaviour:
   - {fileID: 2589636077627936788}
   - {fileID: 2589636078430666620}
   - {fileID: 2589636078368291138}
-  - {fileID: 2589636078060320811}
   - {fileID: 2589636077310201060}
+  - {fileID: 2589636078060320811}
   - {fileID: 2589636078525603005}
   _rightSideGrid:
   - {fileID: 2589636078430666620}
@@ -3355,13 +3147,14 @@ MonoBehaviour:
   - {fileID: 2589636078203197195}
   - {fileID: 2589636077045301937}
   - {fileID: 2589636077627936788}
-  - {fileID: 2589636078060320811}
   - {fileID: 2589636077310201060}
+  - {fileID: 2589636078060320811}
   - {fileID: 2589636078525603005}
   _leftSideColor: {r: 1, g: 0, b: 0, a: 1}
   _rightSideColor: {r: 0, g: 0.2829156, b: 1, a: 1}
   _leftBarrier: {fileID: 2680752219701426225}
   _rightBarrier: {fileID: 3720979394322806203}
+  _requiredCorrectMove: 9
 --- !u!1 &2589636078430666623
 GameObject:
   m_ObjectHideFlags: 0

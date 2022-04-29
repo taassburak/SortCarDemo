@@ -9,6 +9,9 @@ namespace Scripts.Behaviours
     public class BarrierBehaviour : CustomBehaviour
     {
         [SerializeField] LevelEnum.Side _side;
+
+        private bool _isLeftButtonAvaiable = true;
+        private bool _isRightButtonAvaiable = true;
         public override void Initialize(GameManager gameManager)
         {
             base.Initialize(gameManager);
@@ -22,18 +25,23 @@ namespace Scripts.Behaviours
 
         private void OpenBarrierCloseBarrier(bool isRightSide)
         {
+
             if (isRightSide)
             {
                 if (_side == LevelEnum.Side.Left)
                     return;
-                
+
+                if (_isRightButtonAvaiable)
+                {
+                    _isRightButtonAvaiable = false;
                     transform.DORotate(new Vector3(0, 180, -90), 1f).OnComplete(() =>
                     {
-                        transform.DORotate(new Vector3(0,180,0), 1f).SetEase(Ease.InQuint);
+                        transform.DORotate(new Vector3(0, 180, 0), 1f).SetEase(Ease.InQuint).OnComplete(() => _isRightButtonAvaiable = true);
 
                         GameManager.EventManager.RightSideCarStartToMove();
 
                     });
+                }
                 
             }
             else
@@ -41,13 +49,17 @@ namespace Scripts.Behaviours
                 if (_side == LevelEnum.Side.Right)
                     return;
 
-                transform.DORotate(new Vector3(0, 180, -90), 1f).OnComplete(() =>
+                if (_isLeftButtonAvaiable)
                 {
-                    transform.DORotate(new Vector3(0, 180, 0), 1f).SetEase(Ease.InQuint);
+                    _isLeftButtonAvaiable = false;
+                    transform.DORotate(new Vector3(0, 180, -90), 1f).OnComplete(() =>
+                    {
+                        transform.DORotate(new Vector3(0, 180, 0), 1f).SetEase(Ease.InQuint).OnComplete(() => _isLeftButtonAvaiable = true);
 
-                    GameManager.EventManager.LeftSideCarStartToMove();
+                        GameManager.EventManager.LeftSideCarStartToMove();
 
-                });
+                    });
+                }
             }
 
 

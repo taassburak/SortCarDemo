@@ -7,14 +7,14 @@ using DG.Tweening;
 namespace Scripts.Behaviours
 {
     public class CarBehaviour : MonoBehaviour
-    { 
-        [SerializeField]private LevelEnum.Side _side;
+    {
+        [SerializeField] private LevelEnum.Side _side;
         GameManager _gamemanager;
-        
+
 
         public void Initialize(Color colorLeft, Color colorRight, GameManager gameManager)
         {
-           // SetMaterial(colorLeft, colorRight);
+            SetMaterial(colorLeft, colorRight);
             _gamemanager = gameManager;
         }
 
@@ -32,9 +32,9 @@ namespace Scripts.Behaviours
         }
 
 
-        private void MoveNextPosition()
+        public void MoveNextPosition(Transform nextPosition)
         {
-
+            transform.DOMove(nextPosition.position, 0.5f);
         }
 
         public void CarMovement(GridBehaviour grid , Vector3[] pathPoins, float reachTime)
@@ -42,6 +42,7 @@ namespace Scripts.Behaviours
             transform.DOPath(pathPoins, reachTime, PathType.Linear).SetLookAt(-1f).SetEase(Ease.InOutSine).OnComplete(()=>CheckCarOnCorrectGrid(grid.CorrectSide));
             Debug.Log("car moving " + transform.name);
         }
+
 
         public void CheckCarOnCorrectGrid(LevelEnum.Side reachedGridSide)
         {

@@ -1023,6 +1023,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: LeftButton
       objectReference: {fileID: 0}
+    - target: {fileID: 6294731734008981941, guid: dc7d73f5dfd2e814cb11511d6bdef6a9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 48451d6cec2c42243b46380f9be6a1eb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc7d73f5dfd2e814cb11511d6bdef6a9, type: 3}
 --- !u!1 &1694913990 stripped
@@ -1114,6 +1118,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: RightButton
       objectReference: {fileID: 0}
+    - target: {fileID: 6294731734008981941, guid: dc7d73f5dfd2e814cb11511d6bdef6a9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b4f2ae0863b0ffc45968cd5cc0484f53, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc7d73f5dfd2e814cb11511d6bdef6a9, type: 3}
 --- !u!1 &1858070968
@@ -1240,6 +1248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 405bfeaa25f278e4d89eac836444ee3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _leftButtonMaterial: {fileID: 2100000, guid: 48451d6cec2c42243b46380f9be6a1eb, type: 2}
+  _rightButtonMaterial: {fileID: 2100000, guid: b4f2ae0863b0ffc45968cd5cc0484f53, type: 2}
 --- !u!1 &1921120949 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dc7d73f5dfd2e814cb11511d6bdef6a9, type: 3}

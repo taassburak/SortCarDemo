@@ -22,8 +22,8 @@ namespace Scripts.Manager
 
             _eventManager.Initialize(this);
             _uiManager.Initialize(this);
-            _inputManager.Initialize(this);
             _levelManager.Initialize(this);
+            _inputManager.Initialize(this);
 
             _eventManager.LevelStarted();
         }

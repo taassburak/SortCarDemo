@@ -7,7 +7,7 @@ namespace Scripts.Manager
     public class LevelManager : CustomBehaviour
     {
         public bool IsCurrentLevelFinished => _isCurrentLevelFinished;
-
+        public LevelBehaviour CurrentLevel => _currentLevel;
         [SerializeField] LevelBehaviour _levelPrefab; //we have only one level so i dont create a list to hold levels;
 
         private LevelBehaviour _currentLevel;
@@ -18,7 +18,8 @@ namespace Scripts.Manager
         public override void Initialize(GameManager gameManager)
         {
             base.Initialize(gameManager);
-            _requiredCorrectMove = 9;
+            
+            //_requiredCorrectMove = 9;
             
             GameManager.EventManager.OnCarReachedAGrid+= CheckLevelFinished;
             GameManager.EventManager.OnLevelStarted += StartLevel;
@@ -43,7 +44,7 @@ namespace Scripts.Manager
             _currentLevel.Initialize(GameManager);
             _currentCorrectMove = 0;
             _isCurrentLevelFinished = false;
-            //_requiredCorrectMove = _levelPrefab.GridCounts;
+            _requiredCorrectMove = _currentLevel.RequiredCorrectMove;
         }
 
         private void CheckLevelFinished (bool isCorrectMove)

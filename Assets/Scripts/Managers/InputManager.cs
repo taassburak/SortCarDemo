@@ -7,10 +7,22 @@ namespace Scripts.Manager
 
     public class InputManager : CustomBehaviour
     {
+        [SerializeField] Material _leftButtonMaterial;
+        [SerializeField] Material _rightButtonMaterial;
+
+
         public override void Initialize(GameManager gameManager)
         {
             base.Initialize(gameManager);
+            GameManager.EventManager.OnLevelStarted += SetButtonColor;
+            
         }
+
+        private void OnDestroy()
+        {
+            GameManager.EventManager.OnLevelStarted -= SetButtonColor;
+        }
+
         private void Update()
         {
             if (!GameManager.LevelManager.IsCurrentLevelFinished)
@@ -38,12 +50,11 @@ namespace Scripts.Manager
             }
         }
 
-
-
-
-
-
-
+        public void SetButtonColor()
+        {
+            _leftButtonMaterial.color = GameManager.LevelManager.CurrentLevel.LeftSideColor;
+            _rightButtonMaterial.color = GameManager.LevelManager.CurrentLevel.RightSideColor;
+        }
 
     }
 }
