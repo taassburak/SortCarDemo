@@ -12,29 +12,23 @@ namespace Scripts.Behaviours
         GameManager _gamemanager;
 
 
-        public void Initialize(Color colorLeft, Color colorRight, GameManager gameManager)
+        public void Initialize(Color color, GameManager gameManager)
         {
-            SetMaterial(colorLeft, colorRight);
+            SetMaterial(color);
             _gamemanager = gameManager;
         }
 
-        private void SetMaterial(Color colorLeft, Color colorRight)
+        private void SetMaterial(Color color)
         {
             var renderer = GetComponentInChildren<MeshRenderer>();
-            if (_side == LevelEnum.Side.Left)
-            {
-                renderer.materials[0].color = colorLeft;
-            }
-            else
-            {
-                renderer.materials[0].color = colorRight;
-            }
+
+            renderer.materials[0].color = color;
         }
 
 
         public void MoveNextPosition(Transform nextPosition)
         {
-            transform.DOMove(nextPosition.position, 0.5f);
+            transform.DOMove(nextPosition.position, 0.5f).SetEase(Ease.InQuint);
         }
 
         public void CarMovement(GridBehaviour grid , Vector3[] pathPoins, float reachTime)

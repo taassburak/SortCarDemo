@@ -10,8 +10,6 @@ namespace Scripts.Behaviours
     {
         public Color LeftSideColor => _leftSideColor;
         public Color RightSideColor => _rightSideColor;
-        public List<CarBehaviour> CarsOnField => _carsOnField;
-        public Transform CarIdleAheadPosition => _carIdleAheadPosition;
         public int RequiredCorrectMove => _requiredCorrectMove;
 
         [Header("CARS")]
@@ -34,10 +32,9 @@ namespace Scripts.Behaviours
         [SerializeField] private BarrierBehaviour _rightBarrier;
 
         [SerializeField]private int _requiredCorrectMove;
-        [SerializeField] private Transform _carIdleAheadPosition;
-        [SerializeField] private Transform _carIdleBehindPosition;
+        [SerializeField] private  List<Transform> _carIdleRightPositions;
+        [SerializeField] private List<Transform> _carIdleLeftPositions;
         private List<GridBehaviour> _grids;
-        private List<CarBehaviour> _carsOnField;
 
         private int _currentLeftGrid = 0;
         private int _currentRightGrid = 0;
@@ -50,19 +47,14 @@ namespace Scripts.Behaviours
         public override void Initialize(GameManager gameManager)
         {
             base.Initialize(gameManager);
-            _carsOnField = new List<CarBehaviour>();
-
             _leftBarrier.Initialize(gameManager);
             _rightBarrier.Initialize(gameManager);
 
 
             SetGridList(_leftSideGrid, _rightSideGrid);
-            SetCarList(_currentLeftCars, _currentRightCars);
+            CreateDefaultTwoCarsOnStart();
 
-            foreach(var car in _cars)
-            {
-                car.Initialize(_leftSideColor, _rightSideColor, gameManager);
-            }
+
             foreach (var grid in _grids)
             {
                 grid.Initialize(_leftSideColor, _rightSideColor);
@@ -75,6 +67,27 @@ namespace Scripts.Behaviours
         {
             GameManager.EventManager.OnCarStartToMove -= SendCurrentCar;
         }
+
+        private void CreateDefaultTwoCarsOnStart()
+        {
+            var rightCar1 = Instantiate(_rightCarPrefab,_carIdleRightPositions[0].position, Quaternion.Euler(0, 180, 0), transform);
+            var rightCar2 = Instantiate(_rightCarPrefab, _carIdleRightPositions[1].position, Quaternion.Euler(0, 180, 0), transform);
+
+            var leftCar1 = Instantiate(_leftCarPrefab, _carIdleLeftPositions[0].position, Quaternion.Euler(0, 180, 0), transform);
+            var leftCar2 = Instantiate(_leftCarPrefab, _carIdleLeftPositions[1].position, Quaternion.Euler(0, 180, 0), transform);
+
+            rightCar1.Initialize(RightSideColor, GameManager);
+            rightCar2.Initialize(RightSideColor, GameManager);
+            leftCar1.Initialize(LeftSideColor, GameManager);
+            leftCar2.Initialize(LeftSideColor, GameManager);
+
+            _currentRightCars.Add(rightCar1);
+            _currentRightCars.Add(rightCar2);
+            _currentLeftCars.Add(leftCar1);
+            _currentLeftCars.Add(leftCar2);
+
+        }
+
 
         private void SetGridList(List<GridBehaviour> leftSideGrid, List<GridBehaviour> rightSideGrid)
         {
@@ -127,23 +140,32 @@ namespace Scripts.Behaviours
             {
                 _currentRightCars[_currentRightCar].CarMovement(_rightSideGrid[_currentRightGrid], _rightSideGrid[_currentRightGrid].PathForRight, 1.5f);
                 _rightSideGrid[_currentRightGrid].IsFull = true;
+                _currentRightCars[_currentRightCar + 1].MoveNextPosition(_carIdleRightPositions[0]);
                 _currentRightCar++;
-                _currentRightCars[_currentRightCar + 1].MoveNextPosition(_carIdleAheadPosition);
-                //CreateNewCar(_rightCarPrefab, )
+                CreateNewCar(_rightCarPrefab, _carIdleRightPositions[1], RightSideColor, true);
             }
             else
             {
                 _currentLeftCars[_currentLeftCar].CarMovement(_leftSideGrid[_currentLeftGrid], _leftSideGrid[_currentLeftGrid].PathForLeft, 1.5f);
                 _leftSideGrid[_currentLeftGrid].IsFull = true;
+                _currentLeftCars[_currentLeftCar + 1].MoveNextPosition(_carIdleLeftPositions[0]);
                 _currentLeftCar++;
-                CreateNewCar(_leftCarPrefab, )
+                CreateNewCar(_leftCarPrefab, _carIdleLeftPositions[1], LeftSideColor, false);
             }
         }
 
-        private void CreateNewCar(CarBehaviour car, Transform instantiatePosition, Color color)
+        private void CreateNewCar(CarBehaviour car, Transform instantiatePosition, Color color, bool isRightSideCar)
         {
-           var instatiatedCar = Instantiate(car, instantiatePosition.position, Quaternion.identity);
-            //instatiatedCar.Initialize()
+            var instatiatedCar = Instantiate(car, instantiatePosition.position, Quaternion.Euler(0,180,0), transform);
+            instatiatedCar.Initialize(color, GameManager);
+            if (isRightSideCar)
+            {
+                _currentRightCars.Add(instatiatedCar);
+            }
+            else
+            {
+                _currentLeftCars.Add(instatiatedCar);
+            }
         }
 
         private void Update()
