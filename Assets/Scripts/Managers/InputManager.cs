@@ -7,9 +7,6 @@ namespace Scripts.Manager
 
     public class InputManager : CustomBehaviour
     {
-       
-
-
         [SerializeField] GameObject _leftButton;
         [SerializeField] GameObject _rightButton;
 

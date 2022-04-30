@@ -873,7 +873,7 @@ MonoBehaviour:
   _currentRightCars: []
   _leftCarPrefab: {fileID: 4733487192373139904, guid: 35f7c6bf8cc036e449dd0e05fd043acb, type: 3}
   _rightCarPrefab: {fileID: 6820759780212911199, guid: d1ae744e33d5a6a42a2b487f99b8167e, type: 3}
-  _leftSideGrid:
+  _availableGridsForLeftSide:
   - {fileID: 2589636077045301937}
   - {fileID: 2589636077627936788}
   - {fileID: 2589636078430666620}
@@ -881,7 +881,7 @@ MonoBehaviour:
   - {fileID: 2589636077310201060}
   - {fileID: 2589636078060320811}
   - {fileID: 2589636078525603005}
-  _rightSideGrid:
+  _availableGridsForRightSide:
   - {fileID: 2589636078430666620}
   - {fileID: 2589636078368291138}
   - {fileID: 2589636078066900897}

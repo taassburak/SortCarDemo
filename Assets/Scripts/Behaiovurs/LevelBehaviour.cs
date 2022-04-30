@@ -19,10 +19,10 @@ namespace Scripts.Behaviours
         [SerializeField] private CarBehaviour _leftCarPrefab;
         [SerializeField] private CarBehaviour _rightCarPrefab;
 
-        [Header("LEFT RIGHT GRIDS")]
-        [SerializeField] private List<GridBehaviour> _leftSideGrid;
-        [SerializeField] private List<GridBehaviour> _rightSideGrid;
+        [SerializeField] private List<Transform> _carIdleRightPositions;
+        [SerializeField] private List<Transform> _carIdleLeftPositions;
 
+        [Header("LEFT RIGHT GRIDS")]
         [SerializeField] private List<GridBehaviour> _availableGridsForLeftSide;
         [SerializeField] private List<GridBehaviour> _availableGridsForRightSide;
 
@@ -34,17 +34,15 @@ namespace Scripts.Behaviours
         [Header("ENVIRONMENT")]
         [SerializeField] private BarrierBehaviour _leftBarrier;
         [SerializeField] private BarrierBehaviour _rightBarrier;
-
-        [SerializeField]private int _requiredCorrectMove;
-        [SerializeField] private  List<Transform> _carIdleRightPositions;
-        [SerializeField] private List<Transform> _carIdleLeftPositions;
         private List<GridBehaviour> _grids;
+        
+        
+        [SerializeField]private int _requiredCorrectMove;
 
-        private int _currentLeftGrid = 0;
-        private int _currentRightGrid = 0;
-        private int _currentLeftCar = 0;
-        private int _currentRightCar = 0;
-        private List<CarBehaviour> _cars;
+        private int _currentLeftGridIndex = 0;
+        private int _currentRightGridIndex = 0;
+        private int _currentLeftCarIndex = 0;
+        private int _currentRightCarIndex = 0;
 
 
 
@@ -54,15 +52,8 @@ namespace Scripts.Behaviours
             _leftBarrier.Initialize(gameManager);
             _rightBarrier.Initialize(gameManager);
 
-
-            SetGridList(_leftSideGrid, _rightSideGrid);
+            GridsInitialize();
             CreateDefaultTwoCarsOnStart();
-
-
-            foreach (var grid in _grids)
-            {
-                grid.Initialize(_leftSideColor, _rightSideColor);
-            }
 
             GameManager.EventManager.OnCarStartToMove += SendCurrentCar;
 
@@ -70,6 +61,19 @@ namespace Scripts.Behaviours
         private void OnDestroy()
         {
             GameManager.EventManager.OnCarStartToMove -= SendCurrentCar;
+        }
+
+        private void GridsInitialize()
+        {
+            foreach (var grid in _availableGridsForLeftSide)
+            {
+                grid.Initialize(_leftSideColor, _rightSideColor);
+            }
+
+            foreach (var grid in _availableGridsForRightSide)
+            {
+                grid.Initialize(_leftSideColor, _rightSideColor);
+            }
         }
 
         private void CreateDefaultTwoCarsOnStart()
@@ -92,47 +96,22 @@ namespace Scripts.Behaviours
 
         }
 
-
-        private void SetGridList(List<GridBehaviour> leftSideGrid, List<GridBehaviour> rightSideGrid)
-        {
-            _grids = new List<GridBehaviour>();
-            for (int i = 0; i < leftSideGrid.Count; i++)
-            {
-                _grids.Add(leftSideGrid[i]);
-            }
-            for (int i = 0; i < rightSideGrid.Count; i++)
-            {
-                _grids.Add(rightSideGrid[i]);
-            }
-        }
-        private void SetCarList(List<CarBehaviour> leftCars, List<CarBehaviour> rightCars)
-        {
-            _cars = new List<CarBehaviour>();
-            for (int i = 0; i < leftCars.Count; i++)
-            {
-                _cars.Add(leftCars[i]);
-            }
-            for (int i = 0; i < rightCars.Count; i++)
-            {
-                _cars.Add(rightCars[i]);
-            }
-        }
         private void FindFirstAvaiableGrid()
         {
-            for (int i = 0; i < _leftSideGrid.Count; i++)
+            for (int i = 0; i < _availableGridsForLeftSide.Count; i++)
             {
-                if (!_leftSideGrid[i].IsFull)
+                if (!_availableGridsForLeftSide[i].IsFull)
                 {
-                    _currentLeftGrid = i;
+                    _currentLeftGridIndex = i;
                     break;
                 }
             }
 
-            for (int i = 0; i < _rightSideGrid.Count; i++)
+            for (int i = 0; i < _availableGridsForRightSide.Count; i++)
             {
-                if (!_rightSideGrid[i].IsFull)
+                if (!_availableGridsForRightSide[i].IsFull)
                 {
-                    _currentRightGrid = i;
+                    _currentRightGridIndex = i;
                     break;
                 }
             }
@@ -142,18 +121,18 @@ namespace Scripts.Behaviours
             FindFirstAvaiableGrid();
             if (isRightCar)
             {
-                _currentRightCars[_currentRightCar].CarMovement(_rightSideGrid[_currentRightGrid], _rightSideGrid[_currentRightGrid].PathForRight);
-                _rightSideGrid[_currentRightGrid].IsFull = true;
-                _currentRightCars[_currentRightCar + 1].MoveNextPosition(_carIdleRightPositions[0]);
-                _currentRightCar++;
+                _currentRightCars[_currentRightCarIndex].CarMovement(_availableGridsForRightSide[_currentRightGridIndex], _availableGridsForRightSide[_currentRightGridIndex].PathForRight);
+                _availableGridsForRightSide[_currentRightGridIndex].IsFull = true;
+                _currentRightCars[_currentRightCarIndex + 1].MoveNextPosition(_carIdleRightPositions[0]);
+                _currentRightCarIndex++;
                 CreateNewCar(_rightCarPrefab, _carIdleRightPositions[1], RightSideColor, true);
             }
             else
             {
-                _currentLeftCars[_currentLeftCar].CarMovement(_leftSideGrid[_currentLeftGrid], _leftSideGrid[_currentLeftGrid].PathForLeft);
-                _leftSideGrid[_currentLeftGrid].IsFull = true;
-                _currentLeftCars[_currentLeftCar + 1].MoveNextPosition(_carIdleLeftPositions[0]);
-                _currentLeftCar++;
+                _currentLeftCars[_currentLeftCarIndex].CarMovement(_availableGridsForLeftSide[_currentLeftGridIndex], _availableGridsForLeftSide[_currentLeftGridIndex].PathForLeft);
+                _availableGridsForLeftSide[_currentLeftGridIndex].IsFull = true;
+                _currentLeftCars[_currentLeftCarIndex + 1].MoveNextPosition(_carIdleLeftPositions[0]);
+                _currentLeftCarIndex++;
                 CreateNewCar(_leftCarPrefab, _carIdleLeftPositions[1], LeftSideColor, false);
             }
         }
@@ -172,6 +151,7 @@ namespace Scripts.Behaviours
             }
         }
 
+        //testing
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.A))
