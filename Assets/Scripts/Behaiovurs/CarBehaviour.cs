@@ -38,7 +38,7 @@ namespace Scripts.Behaviours
 
         public void MoveNextPosition(Transform nextPosition)
         {
-            transform.DOMove(nextPosition.position, 0.5f).SetEase(Ease.InQuint);
+            transform.DOMove(nextPosition.position, 1f).SetEase(Ease.InOutSine);
         }
 
         public void CarMovement(GridBehaviour grid , Vector3[] pathPoins)
