@@ -8,16 +8,10 @@ namespace Scripts.Behaviours
 {
     public class BarrierBehaviour : CustomBehaviour
     {
-        public bool IsLeftButtonAvaiable => _isLeftButtonAvaiable;
-        public bool IsRightButtonAvaiable => _isRightButtonAvaiable;
 
         [SerializeField] LevelEnum.Side _side;
         [Range(0.1f, 5f)]
         [SerializeField] float _speed = 1f;
-
-        private bool _isLeftButtonAvaiable = true;
-        private bool _isRightButtonAvaiable = true;
-
 
 
         public override void Initialize(GameManager gameManager)
@@ -39,9 +33,6 @@ namespace Scripts.Behaviours
                 if (_side == LevelEnum.Side.Left)
                     return;
 
-                //if (_isRightButtonAvaiable)
-                //{
-                    _isRightButtonAvaiable = false;
                     GameManager.InputManager.IsRightButtonAvaiable = false;
                     transform.DORotate(new Vector3(0, 180, -90), 1f/_speed).OnComplete(() =>
                     {
@@ -50,7 +41,7 @@ namespace Scripts.Behaviours
                         GameManager.EventManager.RightSideCarStartToMove();
 
                     });
-                //}
+                
                 
             }
             else
@@ -58,9 +49,6 @@ namespace Scripts.Behaviours
                 if (_side == LevelEnum.Side.Right)
                     return;
 
-                //if (_isLeftButtonAvaiable)
-                //{
-                    _isLeftButtonAvaiable = false;
                     GameManager.InputManager.IsLeftButtonAvaiable = false;
                     transform.DORotate(new Vector3(0, 180, -90), 1f/_speed).OnComplete(() =>
                     {
@@ -69,7 +57,7 @@ namespace Scripts.Behaviours
                         GameManager.EventManager.LeftSideCarStartToMove();
 
                     });
-                //}
+                
             }
 
 
