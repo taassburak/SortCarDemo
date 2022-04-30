@@ -96,7 +96,7 @@ namespace Scripts.Behaviours
 
         }
 
-        private void FindFirstAvaiableGrid()
+        private void FindFirstAvailableGrid()
         {
             for (int i = 0; i < _availableGridsForLeftSide.Count; i++)
             {
@@ -118,7 +118,7 @@ namespace Scripts.Behaviours
         }
         private void SendCurrentCar(bool isRightCar)
         {
-            FindFirstAvaiableGrid();
+            FindFirstAvailableGrid();
             if (isRightCar)
             {
                 _currentRightCars[_currentRightCarIndex].CarMovement(_availableGridsForRightSide[_currentRightGridIndex], _availableGridsForRightSide[_currentRightGridIndex].PathForRight);

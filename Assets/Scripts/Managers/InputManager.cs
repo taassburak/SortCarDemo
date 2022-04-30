@@ -22,8 +22,8 @@ namespace Scripts.Manager
             _leftButtonMaterial = _leftButton.GetComponent<MeshRenderer>().material;
             _rightButtonMaterial = _rightButton.GetComponent<MeshRenderer>().material;
 
-            IsLeftButtonAvaiable = true;
-            IsRightButtonAvaiable = true;
+            IsLeftButtonAvailable = true;
+            IsRightButtonAvailable = true;
             
         }
 
@@ -32,8 +32,8 @@ namespace Scripts.Manager
             GameManager.EventManager.OnLevelStarted -= SetButtonColor;
         }
 
-        public bool IsLeftButtonAvaiable { get; set; }
-        public bool IsRightButtonAvaiable { get; set ; }
+        public bool IsLeftButtonAvailable { get; set; }
+        public bool IsRightButtonAvailable { get; set ; }
 
         private void Update()
         {
@@ -50,7 +50,7 @@ namespace Scripts.Manager
                         {
 
                             //GameManager.EventManager.LeftSideCarStartToMove();
-                            if (IsLeftButtonAvaiable)
+                            if (IsLeftButtonAvailable)
                             {
 
                                 GameManager.EventManager.LeftBarrierMove();
@@ -61,7 +61,7 @@ namespace Scripts.Manager
                         else if (hit.transform.CompareTag("RightButton"))
                         {
 
-                            if (IsRightButtonAvaiable)
+                            if (IsRightButtonAvailable)
                             {
 
                                 //GameManager.EventManager.RightSideCarStartToMove();

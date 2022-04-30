@@ -33,10 +33,10 @@ namespace Scripts.Behaviours
                 if (_side == LevelEnum.Side.Left)
                     return;
 
-                    GameManager.InputManager.IsRightButtonAvaiable = false;
+                    GameManager.InputManager.IsRightButtonAvailable = false;
                     transform.DORotate(new Vector3(0, 180, -90), 1f/_speed).OnComplete(() =>
                     {
-                        transform.DORotate(new Vector3(0, 180, 0), 1f/_speed).SetEase(Ease.InQuint).OnComplete(() => GameManager.InputManager.IsRightButtonAvaiable = true);
+                        transform.DORotate(new Vector3(0, 180, 0), 1f/_speed).SetEase(Ease.InQuint).OnComplete(() => GameManager.InputManager.IsRightButtonAvailable = true);
 
                         GameManager.EventManager.RightSideCarStartToMove();
 
@@ -49,10 +49,10 @@ namespace Scripts.Behaviours
                 if (_side == LevelEnum.Side.Right)
                     return;
 
-                    GameManager.InputManager.IsLeftButtonAvaiable = false;
+                    GameManager.InputManager.IsLeftButtonAvailable = false;
                     transform.DORotate(new Vector3(0, 180, -90), 1f/_speed).OnComplete(() =>
                     {
-                        transform.DORotate(new Vector3(0, 180, 0), 1f/_speed).SetEase(Ease.InQuint).OnComplete(() => GameManager.InputManager.IsLeftButtonAvaiable = true);
+                        transform.DORotate(new Vector3(0, 180, 0), 1f/_speed).SetEase(Ease.InQuint).OnComplete(() => GameManager.InputManager.IsLeftButtonAvailable = true);
 
                         GameManager.EventManager.LeftSideCarStartToMove();
 
