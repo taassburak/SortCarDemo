@@ -7,7 +7,8 @@ public class GridBehaviour : MonoBehaviour
     public LevelEnum.Side CorrectSide => _correctSide;
     public Vector3[] PathForLeft => _pathForLeft;
     public Vector3[] PathForRight => _pathForRight;
-    public bool IsFull;
+    
+    public bool IsFull { set; get; }
 
     [SerializeField] Vector3[] _pathForLeft;
     [SerializeField] Vector3[] _pathForRight;
