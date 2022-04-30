@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Scripts.Enums;
-public class GridBehaviour : CustomBehaviour
+public class GridBehaviour : MonoBehaviour
 {
     public LevelEnum.Side CorrectSide => _correctSide;
     public Vector3[] PathForLeft => _pathForLeft;

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using DG.Tweening;
 public class FinishPanel : UIPanel
 {
     [SerializeField] Text _finishHeaderText;
@@ -40,6 +40,7 @@ public class FinishPanel : UIPanel
     {
         _finishHeaderText.text = "";
         _buttonText.text = "";
+        DOTween.KillAll();
         HidePanel();
     }
 

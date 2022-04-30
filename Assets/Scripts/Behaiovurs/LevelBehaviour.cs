@@ -23,6 +23,10 @@ namespace Scripts.Behaviours
         [SerializeField] private List<GridBehaviour> _leftSideGrid;
         [SerializeField] private List<GridBehaviour> _rightSideGrid;
 
+        [SerializeField] private List<GridBehaviour> _availableGridsForLeftSide;
+        [SerializeField] private List<GridBehaviour> _availableGridsForRightSide;
+
+
         [Header("SIDE COLOR")]
         [SerializeField] private Color _leftSideColor;
         [SerializeField] private Color _rightSideColor;
@@ -138,7 +142,7 @@ namespace Scripts.Behaviours
             FindFirstAvaiableGrid();
             if (isRightCar)
             {
-                _currentRightCars[_currentRightCar].CarMovement(_rightSideGrid[_currentRightGrid], _rightSideGrid[_currentRightGrid].PathForRight, 1.5f);
+                _currentRightCars[_currentRightCar].CarMovement(_rightSideGrid[_currentRightGrid], _rightSideGrid[_currentRightGrid].PathForRight);
                 _rightSideGrid[_currentRightGrid].IsFull = true;
                 _currentRightCars[_currentRightCar + 1].MoveNextPosition(_carIdleRightPositions[0]);
                 _currentRightCar++;
@@ -146,7 +150,7 @@ namespace Scripts.Behaviours
             }
             else
             {
-                _currentLeftCars[_currentLeftCar].CarMovement(_leftSideGrid[_currentLeftGrid], _leftSideGrid[_currentLeftGrid].PathForLeft, 1.5f);
+                _currentLeftCars[_currentLeftCar].CarMovement(_leftSideGrid[_currentLeftGrid], _leftSideGrid[_currentLeftGrid].PathForLeft);
                 _leftSideGrid[_currentLeftGrid].IsFull = true;
                 _currentLeftCars[_currentLeftCar + 1].MoveNextPosition(_carIdleLeftPositions[0]);
                 _currentLeftCar++;
